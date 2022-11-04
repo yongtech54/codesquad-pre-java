@@ -15,23 +15,22 @@
  * 메소드 크기는 20줄 이내
  * 한 메소드는 한 가지 기능 담당
  * */
-package day04;
+package day04.introduce;
 
 public class HumanInfo {
-    public static String isHuman = "사람";
-    public String name;
-    public int age = 30;
-    public String gender = "여성";
-    public String isMarried = "기혼자";
-    public int numberOfChildren = 1;
+    private String name;
+    private String gender = "여성";
+    private String isMarried = "기혼자";
+    private int numberOfChildren = 1;
+    private int age = 30;
 
-    public HumanInfo(String name) {
-        this.name = name;
+    public HumanInfo(String inputName) {
+        this.name = inputName;
     }
 
-    public void introduce() {
-        System.out.println("이름은 " + this.name + "이고 " + "나이는 " + this.age + "살 입니다. "
+    void introduce() {
+        System.out.println("이름은 " + this.name + "이고 나이는" + this.age + "입니다. "
                             + "성별은 " + this.gender + "이며, " + this.isMarried + "입니다. "
-                            + "자녀는 " + this.numberOfChildren + "명이 있습니다. " + "저는 " + isHuman + "입니다.");
+                            + "자녀는 " + this.numberOfChildren + "명 있습니다.");
     }
 }
