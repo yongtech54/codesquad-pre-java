@@ -6,11 +6,13 @@ class Circle {
 
     private double x, y;
     private int radius;
+    double area;
 
     public Circle(double x, double y, int radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
+        this.area = Math.PI * radius * radius;
     }
 
     public void show() {
@@ -18,7 +20,14 @@ class Circle {
 
         System.out.println(center + " " + radius);
     }
+
+    public void showMax() {
+        String center = "(" + x + "," + y + ")";
+
+        System.out.println("가장 면적이 큰 원은 " + center + " " + radius);
+    }
 }
+
 public class CircleManager {
 
     public static void main(String[] args) {
@@ -34,9 +43,15 @@ public class CircleManager {
             circles[i] = new Circle(x, y, radius);
         }
 
-        for (int i = 0; i < circles.length; i++) {
-            circles[i].show();
+        Circle maxAreaCircle = circles[0];
+
+        for (int i = 1 ; i < circles.length; i++) {
+            if (maxAreaCircle.area < circles[i].area) {
+                maxAreaCircle = circles[i];
+            }
         }
+
+        maxAreaCircle.showMax();
 
         scan.close();
     }
