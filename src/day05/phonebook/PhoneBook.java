@@ -22,25 +22,26 @@ public class PhoneBook {
             System.out.println("[Message] " + (i + 1) + "/" + n + " 등록완료");
         }
 
-        System.out.println("입력하신 내용이 모두 등록되었습니다");
+        System.out.println("[Message] " +"입력하신 내용이 모두 등록되었습니다");
 
         System.out.println("==========전화번호부 검색==========");
 
         while (true) {
-            System.out.print("검색할 이름을 입력해주세요 (* q를 누르면 종료합니다)>> ");
+            System.out.print("검색할 이름을 입력해주세요 (* q를 누르면 종료합니다) >> ");
             name = scanner.next();
             Boolean checked = false;
+
             if (name.equals("q")) break;
 
             for (int i = 0; i < n; i++) {
                 if (phones[i].name.contains(name)) {
-                    System.out.println(phones[i].name + "님의 번호는 " + phones[i].tel + "입니다.");
+                    System.out.println("[Message] " + phones[i].name + "님의 번호는 " + phones[i].tel + "입니다.");
                     checked = true;
                     break;
                 }
             }
 
-            if (!checked) System.out.println(name + "님은 등록되지 않은 정보입니다.");
+            if (!checked) System.out.println("[Message] " + name + "님은 등록되지 않은 정보입니다.");
         }
 
         scanner.close();
