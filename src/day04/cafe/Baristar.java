@@ -3,7 +3,7 @@ package day04.cafe;
 public class Baristar {
     Customer customer;
     String cafe;
-    Menu coffee;
+    Coffee coffee;
 
     Baristar(String cafe) {
         this.cafe = cafe;
@@ -14,12 +14,13 @@ public class Baristar {
         makeCoffee(menu);
     }
 
-    void makeCoffee(String choice) {
-        coffee = new Menu(choice);
+    void makeCoffee(String menu) {
+        coffee = new Coffee(menu);
         checkCounter();
     }
 
     public void checkCounter() {
+        Menu.checkPrice(coffee);
         customer.money -= coffee.price;
 
         System.out.println(customer.name + "님의 남은 돈은 " + customer.money + "원 입니다. "
