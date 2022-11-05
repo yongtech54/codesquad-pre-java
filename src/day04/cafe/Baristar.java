@@ -19,7 +19,7 @@ public class Baristar {
         checkCounter();
     }
 
-    public void checkCounter() {
+    void checkCounter() {
         Menu.checkPrice(coffee);
         customer.money -= coffee.price;
 
