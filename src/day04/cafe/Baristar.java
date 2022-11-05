@@ -2,27 +2,27 @@ package day04.cafe;
 
 public class Baristar {
     Customer customer;
-    String cafeName;
+    String cafe;
     Menu coffee;
 
-    public Baristar(String cafe) {
-        this.cafeName = cafe;
+    Baristar(String cafe) {
+        this.cafe = cafe;
     }
 
-    public void getOrder(Customer person, String coffeeName) {
-        this.customer = person;
-        this.makeCoffee(coffeeName);
+    void getOrder(Customer customer, String menu) {
+        this.customer = customer;
+        makeCoffee(menu);
     }
 
-    public void makeCoffee(String choice) {
-        this.coffee = new Menu(choice);
-        this.checkCounter();
+    void makeCoffee(String choice) {
+        coffee = new Menu(choice);
+        checkCounter();
     }
 
     public void checkCounter() {
-        this.customer.money -= this.coffee.price;
+        customer.money -= coffee.price;
 
-        System.out.println(this.customer.name + "님의 남은 돈은 " + this.customer.money + "원 입니다. "
-                            + this.cafeName + "에서 " + this.coffee.coffeeName + "을(를) 마셨습니다.");
+        System.out.println(customer.name + "님의 남은 돈은 " + customer.money + "원 입니다. "
+                            + cafe + "에서 " + coffee.name + "를 마셨습니다.");
     }
 }

@@ -4,8 +4,12 @@ public class Customer {
     String name;
     int money;
 
-    public Customer(String inputName, int inputMoney) {
-        this.name = inputName;
-        this.money = inputMoney;
+    Customer(String name, int money) {
+        this.name = name;
+        this.money = money;
+    }
+
+    void order(Baristar baristarAtCafe, String menu) {
+        baristarAtCafe.getOrder(this, menu);
     }
 }
