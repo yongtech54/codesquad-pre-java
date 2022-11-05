@@ -12,8 +12,8 @@ public class HumanInfo {
     }
 
     void introduce() {
-        System.out.println("이름은 " + this.name + "이고 나이는" + this.age + "입니다. "
-                            + "성별은 " + this.gender + "이며, " + this.isMarried + "입니다. "
-                            + "자녀는 " + this.numberOfChildren + "명 있습니다.");
+        System.out.println("이름은 " + name + "이고 나이는" + age + "입니다. "
+                            + "성별은 " + gender + "이며, " + isMarried + "입니다. "
+                            + "자녀는 " + numberOfChildren + "명 있습니다.");
     }
 }
