@@ -1,17 +1,3 @@
-/*
- * Mission #2 - 4.
- *
- *
- * access modifier 고민
- * 코딩컨벤션 준수
- * 객체지향 생활체조 준수
- * 1. 한 메서드에는 두 단계 이내의 들여쓰기
- * 2. else 지양
- * 5. 축약 금지
- * 메소드 크기는 20줄 이내
- * 한 메소드는 한 가지 기능 담당
- * */
-
 package day04.checkdate;
 
 import java.util.Arrays;
@@ -56,7 +42,7 @@ public class MyDate {
         return true;
     }
 
-    private boolean checkDay() {
+    private boolean checkNormalDay() {
         if (day31Search() && this.day <= 31) {
             return true;
         }
@@ -79,6 +65,13 @@ public class MyDate {
         return false;
     }
 
+    public boolean checkLeapYear() {
+        if ((this.year % 400 == 0) || ((this.year % 4 == 0) && (this.year % 100 != 0))) {
+            return true;
+        }
+        return false;
+    }
+
     private boolean checkDate() {
         if (!fastCheck()) {
             return false;
@@ -86,17 +79,10 @@ public class MyDate {
         if (this.month == 2) {
             return checkFeburary();
         }
-        if (!checkDay()) {
+        if (!checkNormalDay()) {
             return false;
         }
         return true;
-    }
-
-    public boolean checkLeapYear() {
-        if ((this.year % 400 == 0) || ((this.year % 4 == 0) && (this.year % 100 != 0))) {
-            return true;
-        }
-        return false;
     }
 
     public String isValid() {
