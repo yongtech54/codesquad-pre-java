@@ -2,13 +2,21 @@ package day04.introduce;
 
 public class HumanInfo {
     String name;
-    String gender = "여성";
-    String isMarried = "기혼자";
-    int numberOfChildren = 1;
-    int age = 30;
+    String gender;
+    String isMarried;
+    int numberOfChildren;
+    int age;
 
     HumanInfo(String name) {
+        this(name, "여성", "기혼자", 1, 30);
+    }
+
+    HumanInfo(String name, String gender, String isMarried, int numberOfChildren, int age) {
         this.name = name;
+        this.gender = gender;
+        this.isMarried = isMarried;
+        this.numberOfChildren = numberOfChildren;
+        this.age = age;
     }
 
     void introduce() {
