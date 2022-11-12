@@ -18,7 +18,6 @@ class Day {
 
 public class ScheduleApp {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("이번달 스케쥴 관리 프로그램");
         int num;
